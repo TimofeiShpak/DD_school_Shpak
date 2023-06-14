@@ -1,0 +1,12 @@
+p, div .text, div {
+  border: 1px solid black;
+  font-size: 14px;
+}
+
+div {
+  color: red;
+  background-color: blue;
+}
+p {
+  color: red;
+}

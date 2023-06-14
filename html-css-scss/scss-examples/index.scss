@@ -1,0 +1,21 @@
+%rule-div {
+  border: 1px solid black;
+  font-size: 14px;
+}
+
+div {
+    @extend %rule-div;
+
+    color: red;
+    background-color: blue;
+
+    .text {
+        @extend %rule-div;
+    }
+}
+
+p {
+    @extend %rule-div;
+
+    color: red;
+}

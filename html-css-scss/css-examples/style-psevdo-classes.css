@@ -1,0 +1,31 @@
+p:active {
+    color: green;
+}
+
+input:checked {
+    outline: double;
+}
+
+input:disabled {
+    opacity: 0.5;
+}
+
+input:focus {
+    outline-color: green;
+}
+
+p:hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+div:empty {
+    width: 10px;
+    height: 10px;
+    margin: 10px;
+    background-color: blue;
+}
+
+div:first-child {
+    font-size: 24px;
+}

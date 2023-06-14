@@ -1,0 +1,28 @@
+* {
+    font-size: 16px;
+}
+
+div {
+    color: blue;
+}
+
+#test {
+    color: green;
+}
+
+.test {
+    color: black;
+}
+
+[data-attr="attr"] {
+    font-size: 24px;
+}
+
+p, span {
+    color: green;
+    margin: 0;
+}
+
+p.test {
+    font-size: 24px;
+}

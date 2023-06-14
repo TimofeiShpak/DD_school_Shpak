@@ -1,0 +1,23 @@
+div::after {
+    content: 'after';
+    color: green;
+    display: block;
+}
+
+div::before {
+    content: 'before';
+    margin-right: 10px;
+}
+
+div::first-letter {
+    color: blue;
+}
+
+div::first-line {
+    text-decoration: underline;
+}
+
+div::selection {
+    background-color: black;
+    color: white;
+}
