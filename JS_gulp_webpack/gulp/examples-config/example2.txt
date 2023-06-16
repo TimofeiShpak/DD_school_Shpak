@@ -1,0 +1,41 @@
+var gulp = require('gulp');
+var sass = require('gulp-sass')(require('sass'));
+var browserSync = require('browser-sync'); // плагин для запуска локального сервера
+
+function html() {
+	return gulp.src('src/index.html')
+		.pipe(gulp.dest('dist'))
+		.pipe(browserSync.reload({ stream: true })); // Обновляем HTML на странице при изменении
+}
+
+function js() {
+	return gulp.src('src/js/index.js')
+		.pipe(gulp.dest('dist'))
+		.pipe(browserSync.reload({ stream: true })) // Обновляем JS на странице при изменении
+}
+ 
+function scss(){
+	return gulp.src('src/scss/style.scss')
+		.pipe(sass())
+		.pipe(gulp.dest('dist'))
+		.pipe(browserSync.reload({stream: true})) // Обновляем CSS на странице при изменении
+}
+ 
+function browserSyncStart() {
+	browserSync({ // Выполняем browserSync
+		server: { // Определяем параметры сервера
+			baseDir: 'dist' // Директория для сервера - dist
+		},
+		notify: false // Отключаем уведомления
+	});
+}
+ 
+function watch() {
+	gulp.watch('src/index.html', gulp.parallel(html));
+	gulp.watch('src/js/index.js', gulp.parallel(js));
+	gulp.watch('src/scss/**/*.scss', gulp.parallel(scss));
+}
+
+exports.start = gulp.parallel(html, scss, js, browserSyncStart, watch);
+
+// npm i browser-sync --save-dev

@@ -1,0 +1,16 @@
+var gulp = require('gulp'); // подключаем gulp
+var sass = require('gulp-sass')(require('sass')); // подключаем плагин sass для компиляции файлов в css
+
+function scss(){ // Создаем таск "scss"
+	return gulp.src('src/scss/style.scss') // исходный файл
+		.pipe(sass()) // преобразуем Sass в CSS посредством gulp-sass
+		.pipe(gulp.dest('dist')) // путь для выходного файла
+}
+
+function taskWatch() {
+	gulp.watch('src/scss/**/*.scss', scss); // Наблюдение за sass файлами
+}
+
+exports.watch = gulp.parallel(scss, taskWatch);
+
+// npm i gulp sass gulp-sass --save-dev
